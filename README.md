@@ -10,7 +10,7 @@ Default command runs JBoss bind to IP 0.0.0.0.
 Ports 8080 and 8009 are exposed.
 
 This image can be extended to download a project from Git and compile it with Maven, for example:
-
+```
 FROM yannart/jboss-5.1.0.ga-jdk6
 
 # Name of the application
@@ -41,4 +41,4 @@ RUN git clone ${APP_GIT_REPOSITORY} /tmp/${APP_NAME} \
 CMD ["/opt/jboss/bin/run.sh", "-b", "0.0.0.0"]
 
 EXPOSE 8080
-
+```
