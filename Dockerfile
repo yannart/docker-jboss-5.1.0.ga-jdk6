@@ -12,9 +12,10 @@ RUN yum -y update \
 
 # Install JAVA Oracle JDK 6u45
 ##########################################
-RUN wget --continue --no-check-certificate --header "Cookie: oraclelicense=a" -O jdk-linux-x64.rpm.bin "http://download.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-x64-rpm.bin" \
+RUN cd /tmp \
+&& wget --continue --no-check-certificate --header "Cookie: oraclelicense=a" -O jdk-linux-x64.rpm.bin "http://download.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-x64-rpm.bin" \
 && sh jdk-linux-x64.rpm.bin \
-&& rm jdk-linux-x64.rpm.bin
+&& rm -rf /tmp/*
 ENV JAVA_HOME /usr/java/default
 
 
